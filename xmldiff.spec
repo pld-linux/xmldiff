@@ -5,12 +5,12 @@
 Summary:	XML difference tool
 Summary(pl):	Narzêdzie do porównywania plików XML
 Name:		xmldiff
-Version:	0.6.5
+Version:	0.6.6
 Release:	1
-License:	GPL
+License:	GPL v2
 Group:		Applications/Publishing/XML
 Source0:	ftp://ftp.logilab.org/pub/xmldiff/%{name}-%{version}.tar.gz
-# Source0-md5:	dbaaef1916b076c729d069d929f1901b
+# Source0-md5:	d640c12e9a9467873b7caaf1379d3fe8
 URL:		http://www.logilab.org/projects/xmldiff/view
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
@@ -40,12 +40,12 @@ python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{py_sitedir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{py_sitedir}}
 
 python setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
-
+install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 find $RPM_BUILD_ROOT%{py_sitedir} -name \*.py -exec rm -f {} \;
 
 # see install section of python-logilab-common for explanation
@@ -56,6 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README* xsl doc/*.html
+%doc README* TODO xsl doc/*.html
 %attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/*
 %{py_sitedir}/logilab/xmldiff
