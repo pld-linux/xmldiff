@@ -5,12 +5,12 @@
 Summary:	XML difference tool
 Summary(pl):	Narzêdzie do porównywania plików XML
 Name:		xmldiff
-Version:	0.6.4
+Version:	0.6.5
 Release:	1
 License:	GPL
 Group:		Applications/Publishing/XML
 Source0:	ftp://ftp.logilab.org/pub/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	3f50b71ea237d5b1d518a00b0e716c08
+# Source0-md5:	dbaaef1916b076c729d069d929f1901b
 URL:		http://www.logilab.org/projects/xmldiff/view
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
