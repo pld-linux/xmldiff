@@ -24,8 +24,9 @@ files. It can be used as a library or as a command line tool. It can
 work either with XML files or DOM trees.
 
 %description -l pl
-XMLdiff jest narzêdziem Pythona znajduj±cym ró¿nice miêdzy dwoma plikami XML, w taki sam sposób
-w jaki diff robi to dla plików tekstowych. Mo¿e byæ uzywane jako biblioteka lub z linii poleceñ.
+XMLdiff jest narzêdziem Pythona znajduj±cym ró¿nice miêdzy dwoma
+plikami XML, w taki sam sposób w jaki diff robi to dla plików
+tekstowych. Mo¿e byæ uzywane jako biblioteka lub z linii poleceñ.
 XMLdiff mo¿e pracowaæ na plikach XML lub drzewach DOM.
 
 %prep
@@ -45,7 +46,7 @@ python setup.py install \
 	--optimize=2
 
 find $RPM_BUILD_ROOT%{py_sitedir} -name \*.py -exec rm -f {} \;
- 
+
 # see install section of python-logilab-common for explanation
 rm -f $RPM_BUILD_ROOT%{py_sitedir}/logilab/__init__.*
 
