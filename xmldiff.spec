@@ -9,7 +9,7 @@ Version:	0.6.5
 Release:	1
 License:	GPL
 Group:		Applications/Publishing/XML
-Source0:	ftp://ftp.logilab.org/pub/%{name}/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.logilab.org/pub/xmldiff/%{name}-%{version}.tar.gz
 # Source0-md5:	dbaaef1916b076c729d069d929f1901b
 URL:		http://www.logilab.org/projects/xmldiff/view
 BuildRequires:	python-devel
@@ -31,7 +31,7 @@ tekstowych. Mo¿e byæ u¿ywane jako biblioteka lub z linii poleceñ.
 XMLdiff mo¿e pracowaæ na plikach XML lub drzewach DOM.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 CFLAGS="%{rpmcflags}"
