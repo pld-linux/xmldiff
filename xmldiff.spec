@@ -11,6 +11,7 @@ License:	GPL
 Group:		Applications/Publishing/XML
 Source0:	ftp://ftp.logilab.org/pub/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	3f50b71ea237d5b1d518a00b0e716c08
+URL:            http://www.logilab.org/projects/xmldiff/view
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
