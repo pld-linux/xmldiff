@@ -13,7 +13,6 @@ Source0:	ftp://ftp.logilab.org/pub/xmldiff/%{name}-%{version}.tar.gz
 # Source0-md5:	d640c12e9a9467873b7caaf1379d3fe8
 URL:		http://www.logilab.org/projects/xmldiff/view
 BuildRequires:	python-devel
-BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 Requires:	python-logilab-common >= 0.5.0-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
