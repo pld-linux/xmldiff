@@ -27,7 +27,7 @@ work either with XML files or DOM trees.
 %description -l pl
 XMLdiff jest narzêdziem Pythona znajduj±cym ró¿nice miêdzy dwoma
 plikami XML, w taki sam sposób w jaki diff robi to dla plików
-tekstowych. Mo¿e byæ uzywane jako biblioteka lub z linii poleceñ.
+tekstowych. Mo¿e byæ u¿ywane jako biblioteka lub z linii poleceñ.
 XMLdiff mo¿e pracowaæ na plikach XML lub drzewach DOM.
 
 %prep
