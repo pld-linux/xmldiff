@@ -3,7 +3,7 @@
 # - split to xmldiff and python-xmldiff?
 #
 Summary:	XML difference tool
-Summary(pl.UTF-8):   Narzędzie do porównywania plików XML
+Summary(pl.UTF-8):	Narzędzie do porównywania plików XML
 Name:		xmldiff
 Version:	0.6.7
 Release:	1
