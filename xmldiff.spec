@@ -3,7 +3,7 @@
 # - split to xmldiff and python-xmldiff?
 #
 Summary:	XML difference tool
-Summary(pl):	Narzêdzie do porównywania plików XML
+Summary(pl.UTF-8):   NarzÄ™dzie do porÃ³wnywania plikÃ³w XML
 Name:		xmldiff
 Version:	0.6.7
 Release:	1
@@ -22,11 +22,11 @@ similar XML files, in the same way the diff utility does it for text
 files. It can be used as a library or as a command line tool. It can
 work either with XML files or DOM trees.
 
-%description -l pl
-XMLdiff jest narzêdziem Pythona znajduj±cym ró¿nice miêdzy dwoma
-plikami XML, w taki sam sposób w jaki diff robi to dla plików
-tekstowych. Mo¿e byæ u¿ywane jako biblioteka lub z linii poleceñ.
-XMLdiff mo¿e pracowaæ na plikach XML lub drzewach DOM.
+%description -l pl.UTF-8
+XMLdiff jest narzÄ™dziem Pythona znajdujÄ…cym rÃ³Å¼nice miÄ™dzy dwoma
+plikami XML, w taki sam sposÃ³b w jaki diff robi to dla plikÃ³w
+tekstowych. MoÅ¼e byÄ‡ uÅ¼ywane jako biblioteka lub z linii poleceÅ„.
+XMLdiff moÅ¼e pracowaÄ‡ na plikach XML lub drzewach DOM.
 
 %prep
 %setup -q
