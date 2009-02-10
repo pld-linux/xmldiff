@@ -5,12 +5,13 @@
 Summary:	XML difference tool
 Summary(pl.UTF-8):	Narzędzie do porównywania plików XML
 Name:		xmldiff
-Version:	0.6.7
+Version:	0.6.8
 Release:	1
 License:	GPL v2
 Group:		Applications/Publishing/XML
 Source0:	ftp://ftp.logilab.org/pub/xmldiff/%{name}-%{version}.tar.gz
-# Source0-md5:	07b97c97a0b83d605f37c712400e24ff
+# Source0-md5:	bc1e184e45ce7f9c6beedda76fbeaa16
+Patch0:		%{name}-scope.patch
 URL:		http://www.logilab.org/projects/xmldiff/view
 BuildRequires:	python-devel
 %pyrequires_eq	python-modules
@@ -30,6 +31,7 @@ XMLdiff może pracować na plikach XML lub drzewach DOM.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 CFLAGS="%{rpmcflags}"
@@ -57,3 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{py_sitedir}/xmldiff
+%dir %{_datadir}/sgml/stylesheet
+%dir %{_datadir}/sgml/stylesheet/%{name}
+%{_datadir}/sgml/stylesheet/%{name}/docbook_rev.xsl
+%{_datadir}/sgml/stylesheet/%{name}/xmlrev.xslt
