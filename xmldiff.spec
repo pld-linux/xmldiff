@@ -12,8 +12,10 @@ Group:		Applications/Publishing/XML
 Source0:	ftp://ftp.logilab.org/pub/xmldiff/%{name}-%{version}.tar.gz
 # Source0-md5:	f4764f87f393ad421d9631dd926d7572
 Patch0:		%{name}-scope.patch
-URL:		http://www.logilab.org/projects/xmldiff/view
+URL:		http://www.logilab.org/859/
 BuildRequires:	python-devel
+BuildRequires:	rpmbuild(macros) >= 1.219
+Requires:	python-psyco
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,19 +36,19 @@ XMLdiff może pracować na plikach XML lub drzewach DOM.
 #%patch0 -p1
 
 %build
-CFLAGS="%{rpmcflags}"
-export CFLAGS
-python setup.py build
+export CFLAGS="%{rpmcflags}"
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{py_sitedir}}
-
-python setup.py install \
+%{__python} setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
-install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
-find $RPM_BUILD_ROOT%{py_sitedir} -name \*.py -exec rm -f {} \;
+
+%py_postclean
+
+cp -a man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 rm -r $RPM_BUILD_ROOT%{py_sitedir}/%{name}/test
 
@@ -56,10 +58,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README* TODO xsl doc/*.txt
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
-%{py_sitedir}/xmldiff
+%attr(755,root,root) %{_bindir}/xmldiff
+%attr(755,root,root) %{_bindir}/xmlrev
+%{_mandir}/man1/xmldiff.1*
+%{_mandir}/man1/xmlrev.1*
 %dir %{_datadir}/sgml/stylesheet
 %dir %{_datadir}/sgml/stylesheet/%{name}
 %{_datadir}/sgml/stylesheet/%{name}/docbook_rev.xsl
 %{_datadir}/sgml/stylesheet/%{name}/xmlrev.xslt
+
+%dir %{py_sitedir}/xmldiff
+%{py_sitedir}/xmldiff/*.py[co]
+%attr(755,root,root) %{py_sitedir}/xmldiff/maplookup.so
