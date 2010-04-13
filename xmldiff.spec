@@ -15,7 +15,7 @@ Patch0:		%{name}-scope.patch
 URL:		http://www.logilab.org/859/
 BuildRequires:	python-devel
 BuildRequires:	rpmbuild(macros) >= 1.219
-Requires:	python-psyco
+Suggests:	python-psyco
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
