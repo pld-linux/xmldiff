@@ -14,6 +14,8 @@ Source0:	ftp://ftp.logilab.org/pub/xmldiff/%{name}-%{version}.tar.gz
 Patch0:		%{name}-scope.patch
 URL:		http://www.logilab.org/859/
 BuildRequires:	python-devel
+BuildRequires:	python-modules
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Suggests:	python-psyco
 %pyrequires_eq	python-modules
